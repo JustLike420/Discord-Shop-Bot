@@ -4,7 +4,7 @@ config = configparser.ConfigParser()
 config.read("settings.ini")
 BOT_TOKEN = config["settings"]["token"]
 admins = config["settings"]["admin_id"]
-VK_API_KEY = config["settings"]["vk_token"]
+admin_login = config["settings"]["admin_login"]
 if "," in admins:
     admins = admins.split(",")
 else:

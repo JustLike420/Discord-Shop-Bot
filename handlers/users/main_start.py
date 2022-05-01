@@ -11,11 +11,8 @@ async def start(message: types.Message):
     if not db.subscriber_exists(message.from_user.id):
         db.add_subscriber(message.from_user.id, str(message.from_user.username))
     markup = types.ReplyKeyboardMarkup(resize_keyboard=True)
-    buttons = ['Кнопк1', 'Кнопка2', 'Кнопка3']
-
-    if str(message.from_user.id) in config.admins:
-        buttons.append('Кнопка4')
-        buttons.append('Кнопка5')
+    buttons = ['Заказать discord  аккаунт(ы)', 'ПОМОЩЬ 🆘']
     markup.add(*buttons)
-    await message.answer(f"🤘 Салют, {message.chat.username}!\n",
+    markup.add('INFO')
+    await message.answer(f"Привет!\n\nЧем могу помочь?",
                          reply_markup=markup)
